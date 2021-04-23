@@ -38,7 +38,7 @@ my_pk = ''</pre>
 
 <b>Main coin/token</b>: The token or coin you want to trade tokens for and with
 
-<b>Buy/Sell boundary</b>: The amount of balance (calculated in $) that has to be present in (main-)tokens or coins has to be present in the wallet, to deduct whether the latest action was a buy or a sell. For instance: in the value is 100, your maincoin option BNB and have 120$ worth of BNB on your address, the bot will see the latest action as "sell".
+<b>Buy/Sell boundary</b>: The amount of balance (calculated in $) that has to be present in (main-)tokens or coins has to be present in the wallet, to deduct whether the latest action was a buy or a sell. For instance: if the value is 100, your maincoin option BNB and have 120$ worth of BNB on your address, the bot will see the latest action as "sell".
 
 <b>Token address</b>: Fill the token address of the token you want to trade (such as 0x0000000000000000000000000000000000000000)
 
