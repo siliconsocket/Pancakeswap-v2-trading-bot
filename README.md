@@ -62,7 +62,7 @@ my_pk = ''</pre>
 
 <b>Seconds waiting between trades</b>: depends on how fast transactions finalize
 <b>Max slippage</b>: The maximum slippage you want to allow while trading (0.03 = 3%)
-<b>$ to keep in ETH after trade</b>: The amount of ETH/main token you want to keep after each trade (excluding transaction fee's) in terms of $.
+<b>$ to keep in ETH after trade</b>: The amount of ETH/main token you want to keep after each trade (excluding transaction fees) in terms of $.
 <b>GWEI</b>: The amount of gas you want to use for each trade (5 GWEI is fine)
 
 
