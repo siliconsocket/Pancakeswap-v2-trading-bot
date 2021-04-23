@@ -42,6 +42,10 @@ my_pk = ''</pre>
 
 <b>Token address</b>: Fill the token address of the token you want to trade (such as 0x0000000000000000000000000000000000000000)
 
+<b>Token name</b>: The name of the token, fill it in yourself
+
+<b>Dec.</b>: The amount of decimals the token operates with (18 is normal)
+
 <b>Sell($)</b>: The price you want the trader to sell the token for (0.01 = 1 dollar cent)
 
 <b>Buy($)</b>: The price you want the trader to buy the token for (0.01 = 1 dollar cent)
