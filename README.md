@@ -1,4 +1,4 @@
-# Pancakeswap-trading-bot
+# Pancakeswap trading bot
 A Pancakeswap trading client (and bot) with limit orders, stop-loss, custom gas strategies, a GUI and much more.
 
 ![alt text](https://github.com/aviddot/Uniswap-trading-client/raw/main/testv03.gif "GIF application")
