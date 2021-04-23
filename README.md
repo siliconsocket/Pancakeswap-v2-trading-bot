@@ -104,8 +104,10 @@ my_pk = ''</pre>
 
 <br> </br>
 <H2>Author</H2>
-<br> </br>
+
 If you have any questions you can contact me via telegram: aviddot
+<br> </br>
+Donations: 0x6B1CeA1c27Bbb1428978dC3C0423642fDa404367
 
 
 
