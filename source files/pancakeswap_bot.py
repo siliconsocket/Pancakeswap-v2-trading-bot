@@ -5,7 +5,6 @@ from itertools import permutations
 import time
 from swap import Uniswap
 from web3 import Web3, middleware, _utils
-from web3.gas_strategies.time_based import fast_gas_price_strategy,fastfast_gas_price_strategy,mediummedium_gas_price_strategy,glacial_gas_price_strategy
 from pycoingecko import CoinGeckoAPI
 import pyetherbalance
 import requests
