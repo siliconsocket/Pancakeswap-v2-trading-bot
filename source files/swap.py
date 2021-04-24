@@ -185,13 +185,13 @@ try:
                 # For v2 the address is the same on mainnet, Ropsten, Rinkeby, Görli, and Kovan
                 # https://uniswap.org/docs/v2/smart-contracts/factory
                 factory_contract_address_v2 = _str_to_addr(
-                    "0xBCfCcbde45cE874adCB698cC183deBcF17952812"
+                    "0xcA143Ce32Fe78f1f7019d7d551a6402fC5350c73"
                 )
                 self.factory_contract = self._load_contract(
                     abi_name="uniswap-v2/factory", address=factory_contract_address_v2,
                 )
                 self.router_address: AddressLike = _str_to_addr(
-                    "0x05fF2B0DB69458A0750badebc4f9e13aDd608C7F"
+                    "0x10ED43C718714eb63d5aA57B78B54704E256024E"
                 )
                 """Documented here: https://uniswap.org/docs/v2/smart-contracts/router02/"""
                 self.router = self._load_contract(

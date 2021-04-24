@@ -5,7 +5,7 @@ from itertools import permutations
 import time
 from swap import Uniswap
 from web3 import Web3, middleware, _utils
-from web3.gas_strategies.time_based import fast_gas_price_strategy,fastfast_gas_price_strategy,mediummedium_gas_price_strategy,glacial_gas_price_strategy
+from web3.gas_strategies.time_based import fast_gas_price_strategy,glacial_gas_price_strategy
 from pycoingecko import CoinGeckoAPI
 import pyetherbalance
 import requests
@@ -464,23 +464,27 @@ class Worker(QObject):
                         priceeth = int(float((requests.get('https://api.binance.com/api/v3/ticker/price?symbol=BNBUSDT').json())['price']))
                     if ethaddress != "0x0000000000000000000000000000000000000000":
                         if ethaddress == "0x1af3f329e8be154074d8769d1ffa4ee058b1dbc3":
-                            jajaja = int(float((requests.get('https://api.binance.com/api/v3/ticker/price?symbol=BUSDDAI').json())['price']))
+                            jajaja = (float((requests.get('https://api.binance.com/api/v3/ticker/price?symbol=BUSDDAI').json())['price']))
                             priceeth = int(float((requests.get('https://api.binance.com/api/v3/ticker/price?symbol=BNBUSDT').json())['price']))
                             ethtest = (jajaja / priceeth)*maintokenbalance
                             if ethtest < 0.01:
                                 threeeth = 1
                             else:
                                 threeeth=int((ethtest)*1000000000000000000)
+
                         if ethaddress == "0xe9e7cea3dedca5984780bafc599bd69add087d56":
-                            jajaja = int(float((requests.get('https://api.binance.com/api/v3/ticker/price?symbol=BUSDUSDT').json())['price']))
+                            jajaja = (float((requests.get('https://api.binance.com/api/v3/ticker/price?symbol=BUSDUSDT').json())['price']))
                             priceeth = int(float((requests.get('https://api.binance.com/api/v3/ticker/price?symbol=BNBUSDT').json())['price']))
                             ethtest = (jajaja / priceeth)*maintokenbalance
+
                             if ethtest < 0.01:
                                 threeeth = 1
                             else:
                                 threeeth=int((ethtest)*1000000000000000000)
+
+
                         if ethaddress == "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d":
-                            jajaja = int(float((requests.get('https://api.binance.com/api/v3/ticker/price?symbol=USDCBUSD').json())['price']))
+                            jajaja = (float((requests.get('https://api.binance.com/api/v3/ticker/price?symbol=USDCBUSD').json())['price']))
                             priceeth = int(float((requests.get('https://api.binance.com/api/v3/ticker/price?symbol=BNBUSDT').json())['price']))
                             ethtest = (jajaja / priceeth)*maintokenbalance
                             if ethtest < 0.01:
@@ -488,7 +492,7 @@ class Worker(QObject):
                             else:
                                 threeeth=int((ethtest)*1000000000000000000)
                         if ethaddress == "0x7130d2a12b9bcbfae4f2634d864a1ee1ce3ead9c":
-                            jajaja = int(float((requests.get('https://api.binance.com/api/v3/ticker/price?symbol=BTCUSDT').json())['price']))
+                            jajaja = (float((requests.get('https://api.binance.com/api/v3/ticker/price?symbol=BTCUSDT').json())['price']))
                             priceeth = int(float((requests.get('https://api.binance.com/api/v3/ticker/price?symbol=BNBUSDT').json())['price']))
                             ethtest = (jajaja / priceeth)*maintokenbalance
                             if ethtest < 0.01:
@@ -496,7 +500,7 @@ class Worker(QObject):
                             else:
                                 threeeth=int((ethtest)*1000000000000000000)
                         if ethaddress == "0x2170ed0880ac9a755fd29b2688956bd959f933f8":
-                            jajaja = int(float((requests.get('https://api.binance.com/api/v3/ticker/price?symbol=ETHUSDT').json())['price']))
+                            jajaja = (float((requests.get('https://api.binance.com/api/v3/ticker/price?symbol=ETHUSDT').json())['price']))
                             priceeth = int(float((requests.get('https://api.binance.com/api/v3/ticker/price?symbol=BNBUSDT').json())['price']))
                             ethtest = (jajaja / priceeth)*maintokenbalance
                             if ethtest < 0.01:
@@ -542,13 +546,14 @@ class Worker(QObject):
                         # note that "step" value will not necessarily be same for every thread
                         self.sig_msg.emit('Worker #{} aborting work at step {}'.format(self.__id, step))
 
+
                     for token_number, eth_address, high, low, activate, stoploss_value, stoploss_activate, trade_with_ERC,\
                         trade_with_ETH,fast_token,small_case_name,decimals,balance,price, dollar_balance in all_token_information:
                         if eth_address != '0':
                             if priceright == 'sell':
                                 token1eth = uniswap_wrapper.get_eth_token_input_price(w33.toChecksumAddress(eth_address),
                                                                                       threeeth)
-                                token1eth2 = token1eth / threeeth/1.00092976
+                                token1eth2 = token1eth / threeeth
                                 if decimals != 18:
                                     pricetoken1usd = (priceeth / (token1eth2)) / (10 ** (18 - (decimals)))
                                     dollarbalancetoken1 = pricetoken1usd * balance
@@ -561,7 +566,7 @@ class Worker(QObject):
                             else:
                                 token1eth = uniswap_wrapper.get_token_eth_output_price(w33.toChecksumAddress(eth_address),
                                                                                        threeeth)
-                                token1eth2 = (token1eth / threeeth)*1.00500000
+                                token1eth2 = (token1eth / threeeth)
                                 if decimals != 18:
                                     pricetoken1usd = (priceeth / (token1eth2)) / (10 ** (18 - (decimals)))
                                     dollarbalancetoken1 = pricetoken1usd * balance
@@ -574,6 +579,7 @@ class Worker(QObject):
                             pricetoken1usd = 0
                             dollarbalancetoken1 = 0
                             all_token_information[token_number - 1] = all_token_information[token_number - 1][:13] + (pricetoken1usd, dollarbalancetoken1)
+
                     weergave=''
 
                     for token_number, eth_address, high, low, activate, stoploss_value, stoploss_activate, trade_with_ERC,\
@@ -1033,6 +1039,8 @@ class Worker(QObject):
 
                             totaldollars=dollarbalancemaintoken+all_token_information[0][14]+all_token_information[1][14]+all_token_information[2][14]+all_token_information[3][14]+all_token_information[4][14]+all_token_information[5][14]+all_token_information[6][14]+all_token_information[7][14]+all_token_information[8][14]+all_token_information[9][14]
 
+
+
                             QCoreApplication.processEvents()
                             weergavegeld=str(configfile.maincoinoption)+':$'+str("{:.2f}".format(dollarbalancemaintoken))
                             for token_number, eth_address, high, low, activate, stoploss_value, stoploss_activate, trade_with_ERC, \
@@ -1091,7 +1099,13 @@ class Worker(QObject):
                             if totaldollars<0:
                                 totaldollars2=0
                             else:
-                                totaldollars2=totaldollars
+                                if (totaldollars * 0.9) > (all_token_information[0][14] + all_token_information[1][14] +
+                                                           all_token_information[2][14] + all_token_information[3][14] +
+                                                           all_token_information[4][14] + all_token_information[5][14] +
+                                                           all_token_information[6][14] + all_token_information[7][14] +
+                                                           all_token_information[8][14] + all_token_information[9][14]):
+                                    totaldollars = totaldollars / 2
+                                totaldollars2 = totaldollars
                             if "weergave1" not in locals() and "notyet" in locals():
                                 print(str(strftime("%H:%M:%S", localtime())) + weergave + "  Current total balance($): $" +str("{:.2f}".format(totaldollars2)))
                             if "weergave1" in locals():
