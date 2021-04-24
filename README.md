@@ -1,7 +1,10 @@
+<H2><b>Wait with using the bot, seems like a new version of pancakeswap V2 came out, and the Factory and Router contract changed.</H2></b>
+
+
 # Pancakeswap trading bot
 A Pancakeswap trading client (and bot) with limit orders, stop-loss, custom gas strategies, a GUI and much more.
 
-![alt text](https://github.com/aviddot/Uniswap-trading-client/raw/main/testv03.gif "GIF application")
+![alt text](https://raw.githubusercontent.com/aviddot/Pancakeswap-trading-bot/main/v1gif.gif "GIF application")
 
 <H2>Prerequisites</H2>
 
@@ -38,7 +41,7 @@ my_pk = ''</pre>
 
 <b>Main coin/token</b>: The token or coin you want to trade tokens for and with
 
-<b>Buy/Sell boundary</b>: The amount of balance (calculated in $) that has to be present in (main-)tokens or coins has to be present in the wallet, to deduct whether the latest action was a buy or a sell. For instance: in the value is 100, your maincoin option BNB and have 120$ worth of BNB on your address, the bot will see the latest action as "sell".
+<b>Buy/Sell boundary</b>: The amount of balance (calculated in $) that has to be present in (main-)tokens or coins has to be present in the wallet, to deduct whether the latest action was a buy or a sell. For instance: if the value is 100, your maincoin option BNB and have 120$ worth of BNB on your address, the bot will see the latest action as "sell".
 
 <b>Token address</b>: Fill the token address of the token you want to trade (such as 0x0000000000000000000000000000000000000000)
 
@@ -62,7 +65,7 @@ my_pk = ''</pre>
 
 <b>Seconds waiting between trades</b>: depends on how fast transactions finalize
 <b>Max slippage</b>: The maximum slippage you want to allow while trading (0.03 = 3%)
-<b>$ to keep in ETH after trade</b>: The amount of ETH/main token you want to keep after each trade (excluding transaction fee's) in terms of $.
+<b>$ to keep in ETH after trade</b>: The amount of ETH/main token you want to keep after each trade (excluding transaction fees) in terms of $.
 <b>GWEI</b>: The amount of gas you want to use for each trade (5 GWEI is fine)
 
 
@@ -104,8 +107,10 @@ my_pk = ''</pre>
 
 <br> </br>
 <H2>Author</H2>
-<br> </br>
+
 If you have any questions you can contact me via telegram: aviddot
+<br> </br>
+Donations: 0x6B1CeA1c27Bbb1428978dC3C0423642fDa404367
 
 
 
