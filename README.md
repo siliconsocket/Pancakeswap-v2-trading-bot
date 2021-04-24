@@ -1,7 +1,4 @@
-<H2><b>Wait with using the bot, seems like a new version of pancakeswap V2 came out, and the Factory and Router contract changed.</H2></b>
-
-
-# Pancakeswap trading bot
+# Pancakeswap v2 trading client
 A Pancakeswap trading client (and bot) with limit orders, stop-loss, custom gas strategies, a GUI and much more.
 
 ![alt text](https://raw.githubusercontent.com/aviddot/Pancakeswap-trading-bot/main/v1gif.gif "GIF application")
